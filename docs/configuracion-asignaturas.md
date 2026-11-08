@@ -48,7 +48,7 @@ La frecuencia se valida como entero en frontend, servidor y función de persiste
 
 `lib/configuration/demand.ts` prepara el cálculo por grupo: excluye cerrados y grupos sin configuración compatible, exige coincidencia de asignatura/semestre/contexto y devuelve sesiones semanales, duración, minutos semanales y UUIDs de revisión. No ubica sesiones ni genera horarios.
 
-HU-04 debe conectarlo a grupos persistidos y sus estados calculados. Solo entonces se verifica CA-05 con los datos aprobados. HU-08 debe conservar la revisión explícita al crear borradores; HU-12 debe publicar una versión nueva sin alterar la anterior. El helper de demanda trabaja con una configuración vigente seleccionada; una publicación histórica debe conservar y consultar su propia referencia de revisión.
+HU-04 lo conecta a grupos persistidos y sus estados calculados mediante el [módulo de grupos y su API de demanda](grupos-conteos.md). La aceptación de CA-05 se registra tras comprobar datos aprobados. HU-08 debe conservar la revisión explícita al crear borradores; HU-12 debe publicar una versión nueva sin alterar la anterior. El helper de demanda trabaja con una configuración vigente seleccionada; una publicación histórica debe conservar y consultar su propia referencia de revisión.
 
 La entrega de esta rama corresponde a CA-01 a CA-04. No acredita CA-05 ni las tres integraciones externas: CA-06/HU-07, CA-07/HU-08 y CA-08/HU-08+HU-12. La issue #5 permanece abierta y el PR utiliza `Refs #5`.
 

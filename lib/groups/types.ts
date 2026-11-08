@@ -1,0 +1,10 @@
+import type { Semester, SemesterParameters } from "../configuration/types";
+export type GroupState = "open" | "at_risk" | "closed";
+export const GROUP_STATES: Record<GroupState,string> = { open: "Abierto", at_risk: "En riesgo", closed: "Cerrado" };
+export const GROUP_REASONS = { below_minimum: "Por debajo del mínimo", within_capacity: "Dentro de la capacidad objetivo", within_tolerance: "Usa la tolerancia de capacidad" };
+export type AcademicGroup = { id: string; subject_id: string; semester_id: string; code: string; student_count: number; state: GroupState; state_reason: keyof typeof GROUP_REASONS; parameter_revision_id: string; revision_number: number; created_at: string; updated_at: string };
+export type GroupView = AcademicGroup & { subject: { id: string; code: string; name: string; is_active: boolean }; semester: Semester; parameters: SemesterParameters };
+export type GroupRevision = { id: string; group_id: string; revision_number: number; actor_email: string; previous_values: AcademicGroup | null; next_values: AcademicGroup & { full_code: string }; validation_result: "accepted"; created_at: string };
+export type GroupInput = { subject_id: string; semester_id: string; code: string; student_count: number; expected_parameter_revision_id: string; expected_revision_number: number | null };
+export type GroupErrors = Partial<Record<keyof GroupInput | "form",string>>;
+export type GroupSemester = Semester & { parameters: SemesterParameters | null };
