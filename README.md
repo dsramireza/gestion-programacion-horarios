@@ -24,3 +24,5 @@ Las instrucciones para agentes y el workflow completo están en [AGENTS.md](AGEN
 El [roadmap de HU-01 a HU-04](docs/roadmap-hu01-hu04.md) recoge los acuerdos aprobados, la relación con las fuentes, la secuencia de trabajo y las dependencias para su cierre.
 
 El [catálogo de asignaturas](docs/catalogo-asignaturas.md) documenta la carga aprobada del programa de Ingeniería de Sistemas, sus validaciones y la separación entre asignaturas y grupos.
+
+La [configuración de frecuencia y duración](docs/configuracion-asignaturas.md) describe las revisiones por asignatura/semestre y sus contratos para parámetros, grupos y programación.
