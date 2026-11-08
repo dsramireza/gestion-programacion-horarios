@@ -11,7 +11,7 @@ El mockup de Figma sirve como referencia funcional. La disposición, organizaci�
 - **Aplicación:** Next.js, React y TypeScript, con frontend y backend en un monolito y un solo despliegue de aplicación.
 - **Base de datos y autenticación:** Supabase PostgreSQL y Supabase Auth.
 - **Hosting y despliegue:** Vercel.
-- **Código y seguimiento:** GitHub y el Project del equipo, con los issues existentes.
+- **Código y seguimiento:** GitHub y el [Project del equipo](https://github.com/users/dsramireza/projects/2), con los issues existentes.
 
 El acceso utiliza correo institucional y contraseña, con validación del dominio en frontend y backend y permisos por rol.
 

@@ -5,7 +5,7 @@ Estas instrucciones aplican a todo el repositorio. Antes de trabajar, lee `READM
 ## Contexto y fuentes
 
 - Es un MVP académico de la Facultad de Ingeniería, desarrollado por cuatro integrantes en seis semanas y seis sprints semanales. Mantén el alcance acotado y la solución sencilla.
-- El backlog ya está definido en el GitHub Project del equipo. Trabaja con los issues existentes; no crees nuevos issues, dupliques tareas ni reconstruyas el backlog salvo indicación expresa.
+- El backlog ya está definido en el [GitHub Project del equipo](https://github.com/users/dsramireza/projects/2). Trabaja con los issues existentes; no crees nuevos issues, dupliques tareas ni reconstruyas el backlog salvo indicación expresa.
 - Las decisiones expresas y vigentes del equipo prevalecen sobre propuestas anteriores. Señala las contradicciones que afecten el comportamiento del producto antes de implementar la parte afectada.
 - En el workspace original, las fuentes están fuera de este repositorio: `../proyecto.md`, `../entregables/Acta.md`, `../entregables/Avances.md` y `../entregables/Historias_Usuario_Backend_MVP.md`. Las historias consolidadas siguen siendo una propuesta donde haya decisiones pendientes; no conviertas sus interpretaciones en requisitos aprobados.
 - Contrasta las cifras con `proyecto.md`; si allí no aparecen, usa las del Acta. Acta y Avances orientan el alcance y la funcionalidad. Los parámetros serán configurables y el piloto conservará los valores acordados: capacidad objetivo de 40, tolerancia del 10 % y cierre de grupos con menos de 10 estudiantes.
