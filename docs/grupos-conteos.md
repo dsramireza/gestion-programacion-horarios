@@ -17,11 +17,13 @@ Los límites se leen de la revisión persistida de parámetros del semestre. Par
 
 El máximo general se calcula como `floor(capacidad × (1 + tolerancia / 100))`. No hay edición individual de límites ni estado. El servidor rechaza campos adicionales que intenten enviarlos en el payload; tampoco se conceden escrituras directas sobre las tablas.
 
-El código se recorta y normaliza a mayúsculas. Puede enviarse como sufijo o código completo de la asignatura seleccionada. La unicidad se garantiza dentro de asignatura/semestre; G1 puede existir en otra asignatura. El contexto de un grupo existente no se traslada a otra asignatura/semestre. Inactivar una asignatura impide nuevos grupos y conserva los existentes y su historial; los grupos de asignaturas inactivas no se ofrecen para programar.
+El código se recorta y normaliza a mayúsculas. Puede enviarse como sufijo o código completo de la asignatura seleccionada. Un código completo con G1/G2/etc. cuyo prefijo corresponde a otra asignatura se rechaza con un error junto al campo, antes de guardar. `BDD2026-003G1` y `BDD2026-003-G1` se normalizan a G1; `BDD2026-004-G3` se rechaza al seleccionar `BDD2026-003`. La unicidad se garantiza dentro de asignatura/semestre; G1 puede existir en otra asignatura. El contexto de un grupo existente no se traslada a otra asignatura/semestre. Inactivar una asignatura impide nuevos grupos y conserva los existentes y su historial; los grupos de asignaturas inactivas no se ofrecen para programar.
 
 ## Persistencia, concurrencia y auditoría
 
 La migración `20261108204508_academic_groups.sql` ya se aplicó a la única base. Su nombre generado por CLI se alineó con el historial de Supabase MCP. Vercel no la vuelve a aplicar.
+
+La migración correctiva `20261108220201_group_code_context.sql`, también aplicada, incorpora la validación de pertenencia del código completo detectada por el responsable durante la comprobación de pantalla. El registro de prueba aceptado incorrectamente se retiró con respaldo local de la fila y sus cuatro revisiones, sin modificar las siete asignaturas ni su configuración. No se añadió borrado físico a la aplicación.
 
 - `academic_groups`: contexto, código, conteo, estado/motivo, revisión de parámetros utilizada, número de revisión y fechas.
 - `group_revisions`: responsable institucional, fecha, valores anteriores/nuevos y resultado aceptado de la validación de cada cambio guardado. Los rechazos devuelven errores y no modifican el grupo ni generan un cambio aceptado ficticio.

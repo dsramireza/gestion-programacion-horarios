@@ -61,6 +61,7 @@ export async function saveGroup(value: unknown,id?: string): Promise<SaveResult>
     if(message==="group_not_found") return {ok:false,status:404,errors:{form:"El grupo no existe."}};
     if(message==="invalid_student_count") return {ok:false,status:422,errors:{student_count:"El conteo debe ser un entero entre cero y el máximo tolerado del semestre."}};
     if(message==="invalid_group_code") return {ok:false,status:422,errors:{code:"Escribe un código de grupo no vacío, por ejemplo G1."}};
+    if(message==="invalid_group_code_context") return {ok:false,status:422,errors:{code:"El código completo no coincide con la asignatura seleccionada. Ingresa solo el grupo, por ejemplo G1."}};
     if(message==="invalid_subject") return {ok:false,status:422,errors:{subject_id:"La asignatura debe pertenecer al semestre y estar activa para crear un grupo."}};
     if(message==="invalid_semester") return {ok:false,status:422,errors:{semester_id:"El semestre no está disponible."}};
     if(message==="immutable_group_context") return {ok:false,status:422,errors:{form:"No puedes cambiar la asignatura o el semestre de un grupo existente."}};
