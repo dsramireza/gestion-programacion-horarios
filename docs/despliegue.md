@@ -41,15 +41,15 @@ En un clon nuevo, copia `.env.example` a `.env.local` y completa los dos valores
 Requiere Node.js 24 y npm:
 
 ```sh
-npm install
+npm ci
 npm run dev
 ```
 
-La aplicación queda en `http://localhost:3000`. Para compilar localmente, usa `npm run build`; para servir ese build, `npm start`. Conserva en Git el `package-lock.json` generado al instalar las dependencias.
+La aplicación queda en `http://localhost:3000` y dirige al acceso institucional si no hay sesión. Para compilar localmente, usa `npm run build`; para servir ese build, `npm start`. El lockfile está versionado; usa `npm ci` en clones nuevos y conserva sus actualizaciones en Git cuando cambies dependencias.
 
 ## Comprobación del despliegue
 
-La página `/` muestra el inicio del proyecto y `/api/health` devuelve un JSON con `status: "ok"`. Este endpoint comprueba la respuesta del backend de la aplicación; no ejecuta consultas a la base de datos.
+La página `/login` muestra el acceso institucional, `/` requiere sesión autorizada y `/api/health` devuelve un JSON con `status: "ok"`. Este endpoint comprueba la respuesta del backend de la aplicación; no ejecuta consultas a la base de datos. La administración de cuentas está documentada en `docs/acceso-institucional.md`.
 
 Revisa en Vercel que el despliegue esté `Ready`, que corresponda al commit esperado y que sus logs de build no muestren errores. Comprueba el endpoint y la página para la preview, y repite la comprobación de producción después del merge del PR.
 
