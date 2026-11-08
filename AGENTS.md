@@ -5,7 +5,7 @@ Estas instrucciones aplican a todo el repositorio. Antes de trabajar, lee `READM
 ## Contexto y fuentes
 
 - Es un MVP académico de la Facultad de Ingeniería, desarrollado por cuatro integrantes en seis semanas y seis sprints semanales. Mantén el alcance acotado y la solución sencilla.
-- El backlog ya está definido en el [GitHub Project del equipo](https://github.com/users/dsramireza/projects/2). Trabaja con los issues existentes; no crees nuevos issues, dupliques tareas ni reconstruyas el backlog salvo indicación expresa.
+- El backlog funcional ya está definido en el [GitHub Project del equipo](https://github.com/users/dsramireza/projects/2). Trabaja con las HUs existentes sin duplicarlas ni reconstruirlas. Puedes crear los issues de configuración y documentación necesarios, comprobando antes que no existan.
 - Las decisiones expresas y vigentes del equipo prevalecen sobre propuestas anteriores. Señala las contradicciones que afecten el comportamiento del producto antes de implementar la parte afectada.
 - En el workspace original, las fuentes están fuera de este repositorio: `../proyecto.md`, `../entregables/Acta.md`, `../entregables/Avances.md` y `../entregables/Historias_Usuario_Backend_MVP.md`. Las historias consolidadas siguen siendo una propuesta donde haya decisiones pendientes; no conviertas sus interpretaciones en requisitos aprobados.
 - Contrasta las cifras con `proyecto.md`; si allí no aparecen, usa las del Acta. Acta y Avances orientan el alcance y la funcionalidad. Los parámetros serán configurables y el piloto conservará los valores acordados: capacidad objetivo de 40, tolerancia del 10 % y cierre de grupos con menos de 10 estudiantes.
@@ -17,6 +17,7 @@ Estas instrucciones aplican a todo el repositorio. Antes de trabajar, lee `READM
 
 - Usa Next.js con React y TypeScript para frontend y backend en una sola aplicación. Conserva módulos claros para acceso, catálogos, docentes, grupos, parámetros y programación, dentro del mismo monolito.
 - Vercel aloja y despliega la aplicación. Supabase proporciona PostgreSQL y Auth como servicios administrados separados; no requieren un segundo despliegue del backend de la aplicación.
+- Se usa un único proyecto Supabase y una sola base de datos, compartidos por desarrollo, previews y producción, con datos de demostración. No crees bases, proyectos ni ramas de Supabase por ambiente. Consulta `docs/despliegue.md` para los recursos y variables de conexión.
 - Prioriza las capacidades del stack existente. Añade dependencias o infraestructura cuando la tarea lo justifique; evita introducir servicios, pipelines o capas sin una necesidad concreta del MVP.
 - Mantén las reglas de negocio en el servidor y la persistencia en Supabase. La interfaz presenta formularios, horarios y resultados; sus controles no sustituyen la validación del backend.
 - Implementa correo institucional y contraseña con Supabase Auth. Valida el dominio tanto en frontend como en backend. El dominio por sí solo no autentica ni determina el rol.
@@ -57,4 +58,4 @@ No se utiliza una rama permanente `developer`, `develop` o `development`. Los ca
 - Si publicas mediante una API, verifica que la identidad autenticada y la autoría resultante correspondan al desarrollador. No publiques commits atribuidos a una cuenta de agente como alternativa a un fallo de conexión.
 - El PR debe explicar el comportamiento o documentación resultante, vincular el issue y describir las comprobaciones reales. No declares pruebas, build, despliegues o configuraciones como completados si no se ejecutaron.
 - Los cambios solo documentales no requieren instalar dependencias ni ejecutar build. La implementación del hosting, la aplicación o sus configuraciones debe figurar como pendiente mientras no se haya realizado.
-- No modifiques el Project, los criterios de aceptación ni el estado de otros issues sin que la tarea lo requiera o el equipo lo indique.
+- Los agentes pueden crear issues necesarios para configuración y documentación, por autorización del equipo, comprobando antes que no existan. Las HUs funcionales ya están definidas: no las dupliques. No modifiques sus criterios de aceptación ni el estado de otros issues sin que la tarea lo requiera o el equipo lo indique.
