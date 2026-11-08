@@ -22,3 +22,5 @@ Cada issue se trabaja en una rama creada desde `main`. La integración se realiz
 Las instrucciones para agentes y el workflow completo están en [AGENTS.md](AGENTS.md). La configuración de hosting, la base única de Supabase y los pasos de ejecución están en [Despliegue y conexión](docs/despliegue.md). El [acceso institucional](docs/acceso-institucional.md) explica sesiones, roles, auditoría y administración de cuentas. El endpoint `/api/health` conserva el diagnóstico del backend; las funciones académicas se desarrollan mediante las HUs del proyecto.
 
 El [roadmap de HU-01 a HU-04](docs/roadmap-hu01-hu04.md) recoge los acuerdos aprobados, la relación con las fuentes, la secuencia de trabajo y las dependencias para su cierre.
+
+El [catálogo de asignaturas](docs/catalogo-asignaturas.md) documenta la carga aprobada del programa de Ingeniería de Sistemas, sus validaciones y la separación entre asignaturas y grupos.
