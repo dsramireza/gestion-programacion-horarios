@@ -54,3 +54,13 @@ La página `/` muestra el inicio del proyecto y `/api/health` devuelve un JSON c
 Revisa en Vercel que el despliegue esté `Ready`, que corresponda al commit esperado y que sus logs de build no muestren errores. Comprueba el endpoint y la página para la preview, y repite la comprobación de producción después del merge del PR.
 
 La primera comprobación SQL de Supabase se realiza por separado. El esquema académico y la autenticación se implementan en las HUs correspondientes. Las migraciones SQL se versionan y se aplican de forma controlada; el build no reinicia, puebla ni migra automáticamente la base.
+
+## Verificación inicial del issue #16
+
+- El push del commit `69584f4` activó automáticamente Vercel; Next.js 16.4.5 compiló y el despliegue terminó `Ready`.
+- La página `/` y el endpoint `/api/health` respondieron HTTP 200. El endpoint devolvió `status: "ok"`.
+- Una consulta SQL independiente devolvió `connection_ok = 1` en la base `postgres` del proyecto Supabase.
+- Las dos variables públicas están configuradas para los tres destinos de Vercel y apuntan a la misma base. Los valores locales están en `.env.local`, excluido de Git.
+- La validación del build fue remota: esta terminal no pudo instalar dependencias por un fallo de resolución DNS. El primer `npm install` local debe generar y versionar `package-lock.json`.
+- Vercel clasificó el primer despliegue de la rama de configuración como producción. Está pendiente confirmar el seguimiento de `main` en Settings → Environments → Production → Branch Tracking y comprobar una preview de un push posterior.
+- La colaboración con commits de otro integrante debe comprobarse cuando el equipo haga su primer PR; este arranque solo verifica la identidad académica del responsable de configuración.
