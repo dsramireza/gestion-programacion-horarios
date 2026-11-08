@@ -38,9 +38,10 @@ export default async function SubjectsPage({ searchParams }: { searchParams: Pro
         {error ? <p role="alert" className="error-message">{valid ? "No fue posible consultar el catálogo. Inténtalo de nuevo." : "Los filtros no son válidos. Limpia la búsqueda e inténtalo de nuevo."}</p> :
           subjects.length ? <div className="table-scroll"><table>
             <caption className="table-caption">{subjects.length} asignaturas {hasFilters ? "encontradas" : "en el catálogo"}</caption>
-            <thead><tr><th scope="col">Código</th><th scope="col">Asignatura</th><th scope="col">Programa</th><th scope="col">Créditos</th><th scope="col">Estado</th>{account.role === "administrator" ? <th scope="col">Acciones</th> : null}</tr></thead>
+            <thead><tr><th scope="col">Código</th><th scope="col">Asignatura</th><th scope="col">Programa</th><th scope="col">Créditos</th><th scope="col">Estado</th><th scope="col">Configuración</th>{account.role === "administrator" ? <th scope="col">Acciones</th> : null}</tr></thead>
             <tbody>{subjects.map(subject => <tr key={subject.id}>
               <td>{subject.code}</td><td>{subject.name}</td><td>{programNames.get(subject.program_id)}</td><td>{subject.credits}</td><td><span className={subject.is_active ? "badge badge-active" : "badge"}>{subject.is_active ? "Activo" : "Inactivo"}</span></td>
+              <td><Link href={`/configuracion?subject=${subject.id}`} className="text-link">Ver configuración</Link></td>
               {account.role === "administrator" ? <td><Link href={`/asignaturas/${subject.id}`} className="text-link" aria-label={`Editar ${subject.name}`}>Editar</Link></td> : null}
             </tr>)}</tbody>
           </table></div> : <p className="empty-state">{hasFilters ? "No hay asignaturas que coincidan con la búsqueda." : "Todavía no hay asignaturas en el catálogo."}</p>}
