@@ -19,4 +19,4 @@ El acceso utiliza correo institucional y contraseña, con validación del domini
 
 Cada issue se trabaja en una rama creada desde `main`. La integración se realiza mediante un PR aprobado; al integrarlo en `main`, Vercel compila y despliega una nueva versión si el build tiene éxito.
 
-Las instrucciones para agentes y el workflow completo están en [AGENTS.md](AGENTS.md). Este repositorio se encuentra en preparación; la configuración del hosting y la implementación de la aplicación se realizarán en sus tareas correspondientes.
+Las instrucciones para agentes y el workflow completo están en [AGENTS.md](AGENTS.md). La configuración de hosting, la base única de Supabase y los pasos de ejecución están en [Despliegue y conexión](docs/despliegue.md). La base inicial muestra una página de bienvenida y el endpoint `/api/health`; las funciones académicas se desarrollan mediante las HUs del proyecto.
