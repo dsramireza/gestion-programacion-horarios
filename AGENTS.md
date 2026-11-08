@@ -12,6 +12,8 @@ Estas instrucciones aplican a todo el repositorio. Antes de trabajar, lee `READM
 - El cronograma vigente es de seis semanas. La EDT es el único documento que conserva la referencia desactualizada a doce semanas; no la traslades a la planificación ni modifiques esa excepción por iniciativa propia.
 - El mockup está en `../High-Fidelity Academic Management Mockup`. Es una guía funcional para pantallas e interacciones; los colores, disposición y organización visual pueden cambiar. Sus datos de muestra, estados locales y permisos simulados no son reglas de negocio.
 - Estas fuentes externas pueden no estar disponibles en otro clon. Usa el issue y la documentación versionada disponible; si falta una regla necesaria, solicita esa información sin inventarla.
+- Consulta `docs/roadmap-hu01-hu04.md` para la revisión y los acuerdos de HU-01 a HU-04. Las issues refinadas conservan sus criterios identificados y dependencias; no uses la numeración distinta de Avances para reasignar historias.
+- Todo dato que se cargue o muestre en la aplicación debe contar con aprobación del responsable del proyecto. No inventes ni copies datos del mockup como carga autorizada. Nombres, códigos, créditos, programas, cuentas y demás datos iniciales o de demostración deben aprobarse antes de mostrarlos o persistirlos. Usa estados vacíos mientras falta esa información. No agregues por esta regla un flujo nuevo de aprobación dentro del producto sin que se solicite.
 
 ## Arquitectura acordada
 
@@ -35,6 +37,8 @@ Estas instrucciones aplican a todo el repositorio. Antes de trabajar, lee `READM
 5. Revisa el diff y documenta las comprobaciones realizadas y las limitaciones reales. Cuando corresponda, comprueba manualmente el flujo afectado frente a los criterios del issue, sin inventar resultados.
 6. Publica la rama y abre un PR hacia `main`, vinculando el issue existente. Usa `Closes #<numero>` solo si el PR resuelve por completo un issue de ese repositorio; para elementos del Project utiliza su enlace o identificador real.
 7. La aprobación del PR permite su integración. La revisión y el merge corresponden al equipo; un agente solo los realiza si recibe una instrucción expresa para ello.
+
+Los criterios de aceptación solo se marcan cuando hay evidencia de implementación y verificación. Mantén en cada issue el número de criterios pendientes y sus dependencias. Un PR parcial puede integrarse sin cerrar la HU: usa `Refs #<numero>` y conserva la issue abierta mientras quede algún criterio local o de integración pendiente. `Closes #<numero>` y el paso a Done requieren todos los criterios verificados. Aprobar una regla o realizar un despliegue no equivale a cumplirla.
 
 No se utiliza una rama permanente `developer`, `develop` o `development`. Los cambios llegan a `main` mediante PR.
 
