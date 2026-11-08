@@ -62,5 +62,5 @@ La primera comprobación SQL de Supabase se realiza por separado. El esquema aca
 - Una consulta SQL independiente devolvió `connection_ok = 1` en la base `postgres` del proyecto Supabase.
 - Las dos variables públicas están configuradas para los tres destinos de Vercel y apuntan a la misma base. Los valores locales están en `.env.local`, excluido de Git.
 - La validación del build fue remota: esta terminal no pudo instalar dependencias por un fallo de resolución DNS. El primer `npm install` local debe generar y versionar `package-lock.json`.
-- Vercel clasificó el primer despliegue de la rama de configuración como producción. Está pendiente confirmar el seguimiento de `main` en Settings → Environments → Production → Branch Tracking y comprobar una preview de un push posterior.
+- El equipo confirmó en Settings → Environments → Production → Branch Tracking que producción sigue `main`. El segundo push, commit `249cf68`, generó automáticamente una preview que terminó `Ready`. El primer despliegue del proyecto había sido clasificado como producción; el push posterior confirma el comportamiento de previews de la rama de trabajo.
 - La colaboración con commits de otro integrante debe comprobarse cuando el equipo haga su primer PR; este arranque solo verifica la identidad académica del responsable de configuración.
