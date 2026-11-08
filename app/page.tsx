@@ -13,6 +13,7 @@ export default async function Home() {
       </header>
       <nav aria-label="Navegación principal" className="navigation">
         <Link href="/" aria-current="page">Inicio</Link>
+        {account.role === "administrator" || account.role === "director" ? <Link href="/asignaturas">Asignaturas</Link> : null}
         {account.role === "administrator" ? <Link href="/accesos">Historial de permisos</Link> : null}
       </nav>
       <section className="panel">

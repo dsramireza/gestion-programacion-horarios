@@ -32,6 +32,7 @@ Las cuatro issues se refinan en GitHub. HU-02 ya contenía un objetivo implement
 
 ## Acuerdos de acceso y catálogo
 
+- Carga aprobada posteriormente: únicamente Programa de Ingeniería de Sistemas, siete asignaturas y diez grupos. La tabla exacta y separación entre código de asignatura y sufijo G1/G2 constan en [Catálogo de asignaturas](catalogo-asignaturas.md) y en las issues #4 y #6. Esta decisión sustituye los cuatro programas de demostración del mockup. Los profesores se asignarán por grupo; no se infieren conteos ni frecuencias de esta carga.
 - Cuentas creadas por administración, sin registro público, con recuperación administrativa y un único rol vigente: Administrador, Director, Docente o Estudiante-consulta.
 - HU-01 entrega identidad, sesión, autorización y procedimiento administrativo; no un módulo completo de gestión de usuarios ni las pantallas de consulta de historias posteriores.
 - Administración modifica asignaturas y configuración por asignatura. Director consulta el catálogo y gestiona grupos de toda la Facultad. Docente y Estudiante-consulta no administran estos módulos.
