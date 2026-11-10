@@ -28,3 +28,5 @@ El [catálogo de asignaturas](docs/catalogo-asignaturas.md) documenta la carga a
 La [configuración de frecuencia y duración](docs/configuracion-asignaturas.md) describe las revisiones por asignatura/semestre y sus contratos para parámetros, grupos y programación.
 
 La [gestión de grupos y conteos](docs/grupos-conteos.md) documenta los estados calculados, auditoría y demanda de sesiones por grupo.
+
+La [gestión de docentes](docs/docentes.md) describe los datos de dedicación y escalafón, su historial y el contrato de revisiones para las HUs de programación.
