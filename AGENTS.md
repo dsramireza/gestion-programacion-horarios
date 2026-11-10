@@ -35,10 +35,12 @@ Estas instrucciones aplican a todo el repositorio. Antes de trabajar, lee `READM
 3. Crea una rama por issue desde `main` actualizado, por ejemplo `feat/issue-<id>-<descripcion>`, `fix/issue-<id>-<descripcion>` o `docs/issue-<id>-<descripcion>`. No implementes sobre `main` ni reutilices ramas de otros issues.
 4. Implementa únicamente lo necesario para el issue. Conserva los cambios ajenos y evita refactorizaciones o ampliaciones de alcance no solicitadas.
 5. Revisa el diff y documenta las comprobaciones realizadas y las limitaciones reales. Cuando corresponda, comprueba manualmente el flujo afectado frente a los criterios del issue, sin inventar resultados.
-6. Publica la rama y abre un PR hacia `main`, vinculando el issue existente. Usa `Closes #<numero>` solo si el PR resuelve por completo un issue de ese repositorio; para elementos del Project utiliza su enlace o identificador real.
+6. Publica la rama y abre un PR hacia `main`, vinculando el issue existente con una palabra clave en la descripción del PR: `Closes #<numero>` si el PR completa todos sus criterios, o `Refs #<numero>` si es parcial. Para elementos del Project utiliza su enlace o identificador real.
 7. La aprobación del PR permite su integración. La revisión y el merge corresponden al equipo; un agente solo los realiza si recibe una instrucción expresa para ello.
 
 Los criterios de aceptación solo se marcan cuando hay evidencia de implementación y verificación. Mantén en cada issue el número de criterios pendientes y sus dependencias. Un PR parcial puede integrarse sin cerrar la HU: usa `Refs #<numero>` y conserva la issue abierta mientras quede algún criterio local o de integración pendiente. `Closes #<numero>` y el paso a Done requieren todos los criterios verificados. Aprobar una regla o realizar un despliegue no equivale a cumplirla.
+
+Los issues se cierran siempre mediante la palabra clave `Closes #<numero>` del PR que completa sus criterios, al integrarse en `main`. No cierres issues manualmente. Si los últimos criterios se verifican sin cambios de código, por ejemplo al comprobar una integración, registra la evidencia en la documentación de la HU mediante un PR que use `Closes #<numero>`.
 
 No se utiliza una rama permanente `developer`, `develop` o `development`. Los cambios llegan a `main` mediante PR.
 
