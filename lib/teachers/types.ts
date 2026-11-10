@@ -1,4 +1,6 @@
-export const DEDICATIONS = { TC: "Tiempo completo", MT: "Medio tiempo", HC: "Hora cátedra" } as const;
+export const DEDICATIONS = {
+  tiempo_completo: "Tiempo completo", tres_cuartos: "Tres cuartos de tiempo", medio_tiempo: "Medio tiempo", cuarto_tiempo: "Un cuarto de tiempo",
+} as const;
 export const ACADEMIC_RANKS = { auxiliar: "Auxiliar", asistente: "Asistente", asociado: "Asociado", titular: "Titular" } as const;
 export type Dedication = keyof typeof DEDICATIONS;
 export type AcademicRank = keyof typeof ACADEMIC_RANKS;

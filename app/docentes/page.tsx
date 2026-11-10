@@ -34,7 +34,7 @@ export default async function TeachersPage({ searchParams }: { searchParams: Pro
         <form method="GET" className="catalog-filters" key={JSON.stringify(filters)}>
           <div className="field"><label htmlFor="search">Buscar por identificador, nombre o correo</label><input id="search" name="q" type="search" defaultValue={filters.query} /></div>
           <div className="field"><label htmlFor="program">Programa</label><select id="program" name="program" defaultValue={filters.programId}><option value="">Todos los programas</option>{programs.map(program => <option key={program.id} value={program.id}>{program.name}</option>)}</select></div>
-          <div className="field"><label htmlFor="dedication">Dedicación</label><select id="dedication" name="dedication" defaultValue={filters.dedication}><option value="">Todas</option>{Object.entries(DEDICATIONS).map(([value, label]) => <option key={value} value={value}>{value} — {label}</option>)}</select></div>
+          <div className="field"><label htmlFor="dedication">Dedicación</label><select id="dedication" name="dedication" defaultValue={filters.dedication}><option value="">Todas</option>{Object.entries(DEDICATIONS).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></div>
           <div className="field"><label htmlFor="state">Estado</label><select id="state" name="state" defaultValue={filters.state}><option value="all">Todos</option><option value="active">Activo</option><option value="inactive">Inactivo</option></select></div>
           <button className="button" type="submit">Buscar</button><Link href="/docentes" className="text-link">Limpiar</Link>
         </form>
@@ -44,7 +44,7 @@ export default async function TeachersPage({ searchParams }: { searchParams: Pro
             <thead><tr><th scope="col">Identificador</th><th scope="col">Nombre</th><th scope="col">Correo</th><th scope="col">Programa</th><th scope="col">Dedicación</th><th scope="col">Escalafón</th><th scope="col">Estado</th><th scope="col">Acciones</th></tr></thead>
             <tbody>{teachers.map(teacher => <tr key={teacher.id}>
               <td>{teacher.institutional_id}</td><td>{teacher.full_name}</td><td>{teacher.email}</td><td>{programNames.get(teacher.program_id)}</td>
-              <td>{teacher.dedication}</td><td>{ACADEMIC_RANKS[teacher.academic_rank]}</td>
+              <td>{DEDICATIONS[teacher.dedication]}</td><td>{ACADEMIC_RANKS[teacher.academic_rank]}</td>
               <td><span className={teacher.is_active ? "badge badge-active" : "badge"}>{teacher.is_active ? "Activo" : "Inactivo"}</span></td>
               <td><Link href={`/docentes/${teacher.id}`} className="text-link" aria-label={`${account.role === "administrator" ? "Editar" : "Consultar"} ${teacher.full_name}`}>{account.role === "administrator" ? "Editar e historial" : "Ver historial"}</Link></td>
             </tr>)}</tbody>

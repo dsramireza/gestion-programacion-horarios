@@ -18,7 +18,7 @@ La migración `20261110150000_teachers.sql` crea `teachers`, `teacher_revisions`
 | `full_name` | Obligatorio, sin espacios externos. |
 | `email` | En minúsculas, dominio `@unbosque.edu.co` y único entre docentes, incluidos los inactivos. No crea ni vincula una cuenta de acceso. |
 | `program_id` | Programa activo de la Facultad de Ingeniería. Un docente conserva su programa si este se inactiva después. |
-| `dedication` | `TC` (tiempo completo), `MT` (medio tiempo) o `HC` (hora cátedra). |
+| `dedication` | `tiempo_completo`, `tres_cuartos`, `medio_tiempo` o `cuarto_tiempo`: las cuatro vinculaciones de `proyecto.md` (situación inicial). Sustituyen la lista TC/MT/HC de la consolidación de historias, por decisión del responsable y la precedencia de fuentes de AGENTS.md. |
 | `academic_rank` | `auxiliar`, `asistente`, `asociado` o `titular`. |
 | `is_active` | Retirar a un docente consiste en inactivarlo. No existe borrado físico. |
 

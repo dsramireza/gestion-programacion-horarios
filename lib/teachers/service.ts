@@ -30,7 +30,7 @@ const FIELD_ERRORS: Record<string, TeacherErrors> = {
   invalid_institutional_id: { institutional_id: "El identificador institucional es obligatorio." },
   invalid_full_name: { full_name: "El nombre es obligatorio." },
   invalid_email: { email: "Usa un correo institucional @unbosque.edu.co." },
-  invalid_dedication: { dedication: "Selecciona una dedicación válida: TC, MT o HC." },
+  invalid_dedication: { dedication: "Selecciona una dedicación válida." },
   invalid_academic_rank: { academic_rank: "Selecciona un escalafón válido." },
   invalid_is_active: { is_active: "Indica si el docente está activo." },
   invalid_program: { program_id: "El programa no está disponible en la facultad del piloto." },

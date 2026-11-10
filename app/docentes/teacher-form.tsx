@@ -73,7 +73,7 @@ export function TeacherForm({ programs, teacher }: { programs: Program[]; teache
             <label htmlFor="dedication">Dedicación</label>
             <select id="dedication" name="dedication" defaultValue={teacher?.dedication ?? ""} required aria-invalid={Boolean(errors.dedication)} aria-describedby={description("dedication")}>
               <option value="">Selecciona la dedicación</option>
-              {Object.entries(DEDICATIONS).map(([value, label]) => <option key={value} value={value}>{value} — {label}</option>)}
+              {Object.entries(DEDICATIONS).map(([value, label]) => <option key={value} value={value}>{label}</option>)}
             </select>
             <FieldError field="dedication" errors={errors} />
           </div>

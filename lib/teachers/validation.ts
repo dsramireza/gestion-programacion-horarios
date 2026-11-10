@@ -27,7 +27,7 @@ export function validateTeacher(value: unknown): { data: TeacherInput; errors: T
   if (!data.email) errors.email = "El correo institucional es obligatorio.";
   else if (!institutionalEmail(data.email)) errors.email = "Usa un correo institucional @unbosque.edu.co.";
   if (!UUID.test(data.program_id)) errors.program_id = "Selecciona un programa válido.";
-  if (!isDedication(data.dedication)) errors.dedication = "Selecciona una dedicación válida: TC, MT o HC.";
+  if (!isDedication(data.dedication)) errors.dedication = "Selecciona una dedicación válida.";
   if (!isAcademicRank(data.academic_rank)) errors.academic_rank = "Selecciona un escalafón válido.";
   if (typeof raw.is_active !== "boolean") errors.is_active = "Indica si el docente está activo.";
   if (data.expected_revision_number !== null && (!Number.isInteger(data.expected_revision_number) || data.expected_revision_number < 1))

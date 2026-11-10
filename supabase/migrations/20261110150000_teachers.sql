@@ -5,7 +5,7 @@ create table public.teachers (
   full_name text not null check (length(full_name) > 0 and full_name = btrim(full_name)),
   email text not null check (email = lower(btrim(email)) and email ~ '^[^[:space:]@]+@unbosque[.]edu[.]co$'),
   program_id uuid not null references public.programs(id) on delete restrict,
-  dedication text not null check (dedication in ('TC','MT','HC')),
+  dedication text not null check (dedication in ('tiempo_completo','tres_cuartos','medio_tiempo','cuarto_tiempo')),
   academic_rank text not null check (academic_rank in ('auxiliar','asistente','asociado','titular')),
   is_active boolean not null default true,
   revision_number integer not null check (revision_number > 0),
@@ -67,7 +67,7 @@ begin
   if length(v_institutional_id) = 0 then raise exception using errcode = '22023', message = 'invalid_institutional_id'; end if;
   if length(v_full_name) = 0 then raise exception using errcode = '22023', message = 'invalid_full_name'; end if;
   if v_email !~ '^[^[:space:]@]+@unbosque[.]edu[.]co$' then raise exception using errcode = '22023', message = 'invalid_email'; end if;
-  if p_dedication is null or p_dedication not in ('TC','MT','HC') then raise exception using errcode = '22023', message = 'invalid_dedication'; end if;
+  if p_dedication is null or p_dedication not in ('tiempo_completo','tres_cuartos','medio_tiempo','cuarto_tiempo') then raise exception using errcode = '22023', message = 'invalid_dedication'; end if;
   if p_academic_rank is null or p_academic_rank not in ('auxiliar','asistente','asociado','titular') then
     raise exception using errcode = '22023', message = 'invalid_academic_rank';
   end if;

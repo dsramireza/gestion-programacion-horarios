@@ -14,6 +14,7 @@ const LABELS: Record<string, string> = {
 };
 function display(field: string, value: unknown, programs: Map<string, string>) {
   if (field === "program_id") return programs.get(String(value)) ?? String(value);
+  if (field === "dedication") return DEDICATIONS[value as Teacher["dedication"]] ?? String(value);
   if (field === "academic_rank") return ACADEMIC_RANKS[value as Teacher["academic_rank"]] ?? String(value);
   if (field === "is_active") return value ? "Activo" : "Inactivo";
   return String(value);
@@ -48,7 +49,7 @@ export default async function TeacherDetailPage({ params }: { params: Promise<{ 
           <div className="field"><dt>Correo institucional</dt><dd>{teacher.email}</dd></div>
           <div className="field form-wide"><dt>Nombre completo</dt><dd>{teacher.full_name}</dd></div>
           <div className="field form-wide"><dt>Programa</dt><dd>{programNames.get(teacher.program_id)}</dd></div>
-          <div className="field"><dt>Dedicación</dt><dd>{teacher.dedication} — {DEDICATIONS[teacher.dedication]}</dd></div>
+          <div className="field"><dt>Dedicación</dt><dd>{DEDICATIONS[teacher.dedication]}</dd></div>
           <div className="field"><dt>Escalafón</dt><dd>{ACADEMIC_RANKS[teacher.academic_rank]}</dd></div>
           <div className="field"><dt>Estado</dt><dd>{teacher.is_active ? "Activo" : "Inactivo"}</dd></div>
         </dl>}
