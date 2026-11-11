@@ -10,7 +10,7 @@ No se carga ningún docente. Los nombres, identificadores, correos, dedicaciones
 
 ## Modelo y validaciones
 
-La migración `20261110150000_teachers.sql` crea `teachers`, `teacher_revisions`, la función de escritura `save_teacher` y la búsqueda `search_teachers`.
+La migración `20261111001722_teachers.sql` crea `teachers`, `teacher_revisions`, la función de escritura `save_teacher` y la búsqueda `search_teachers`.
 
 | Campo | Regla |
 | --- | --- |
@@ -51,7 +51,9 @@ El cuerpo de escritura es `{institutional_id, full_name, email, program_id, dedi
 
 ## Aplicación de la migración
 
-La migración debe aplicarse a la única base de Supabase antes de integrar en `main` la versión que la usa, en coordinación con el responsable. Depende de las migraciones de acceso (`private.current_app_role`, `user_profiles`) y catálogo (`programs`, `faculties`).
+La migración `20261111001722_teachers.sql` está aplicada a la única base de Supabase con el nombre `teachers`; el nombre local coincide con la versión registrada por el servicio. Vercel no la ejecuta de nuevo. Depende de las migraciones de acceso (`private.current_app_role`, `user_profiles`) y catálogo (`programs`, `faculties`).
+
+Antes de aplicarla se ejecutó en una transacción revertida: creó 3 funciones y 2 políticas, activó RLS y rechazó a un usuario autenticado sin rol de Administrador. Después de aplicarla se comprobó que ambas tablas tienen RLS, solo `SELECT` para `authenticated`, ningún permiso para `anon` y cero docentes. Los asesores de Supabase no reportan hallazgos nuevos de seguridad; persiste el aviso previo de protección de contraseñas filtradas desactivada, y los índices nuevos aparecen como no usados porque las tablas están vacías.
 
 ## Alcance de la verificación
 
