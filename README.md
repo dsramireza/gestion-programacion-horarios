@@ -31,4 +31,6 @@ La [gestión de grupos y conteos](docs/grupos-conteos.md) documenta los estados 
 
 La [continuidad de HU-06 a HU-13](docs/continuidad-hu06-hu13.md) recoge el estado revisado, los permisos aprobados y el orden de las siguientes entregas.
 
+Los [parámetros del semestre](docs/parametros-semestre.md) documentan fechas, franjas institucionales, límites versionados y datos pendientes de revisión al cambiarlos.
+
 La [gestión de docentes](docs/docentes.md) describe los datos de dedicación y escalafón, su historial y el contrato de revisiones para las HUs de programación.

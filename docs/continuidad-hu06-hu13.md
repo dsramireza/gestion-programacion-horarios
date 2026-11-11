@@ -23,7 +23,7 @@ Una fila de teachers no constituye una cuenta Auth. Para la edición propia se n
 
 ### HU-07: período y permisos
 
-- Período 2026-2: **1 de junio de 2026 a 31 de diciembre de 2026**, confirmado por el responsable. Las fechas están aprobadas para la próxima implementación; no se da por aplicada una migración de fechas en esta revisión.
+- Período 2026-2: **1 de junio de 2026 a 31 de diciembre de 2026**, confirmado por el responsable. Persistido por la migración HU-07 `20261111234613`; la incorporación inicial conserva las referencias preexistentes. La aceptación del flujo de pantalla se registra en `docs/parametros-semestre.md`.
 - Administrador edita los parámetros; Director consulta. Las revisiones conservan responsable, fecha y motivo.
 - Los valores iniciales siguen las fuentes y acuerdos: lunes a viernes 07:00–22:00, sábado 07:00–13:00 y exclusión 12:00–13:00; duración 120 minutos, máximo inicial cuatro sesiones, capacidad 40, mínimo 10 y tolerancia 10 %.
 - El semestre académico no cambia el cronograma del proyecto: seis semanas de desarrollo. Las doce semanas permanecen solo en la EDT por la excepción aprobada.

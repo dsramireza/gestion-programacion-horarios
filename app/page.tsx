@@ -17,6 +17,7 @@ export default async function Home() {
         {account.role === "administrator" || account.role === "director" ? <Link href="/docentes">Docentes</Link> : null}
         {account.role === "administrator" || account.role === "director" ? <Link href="/configuracion">Frecuencia y duración</Link> : null}
         {account.role === "administrator" || account.role === "director" ? <Link href="/grupos">Grupos y conteos</Link> : null}
+        {account.role === "administrator" || account.role === "director" ? <Link href="/parametros">Parámetros del semestre</Link> : null}
         {account.role === "administrator" ? <Link href="/accesos">Historial de permisos</Link> : null}
       </nav>
       <section className="panel">
