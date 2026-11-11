@@ -10,7 +10,7 @@ No se carga ningún docente. Los nombres, identificadores, correos, dedicaciones
 
 ## Modelo y validaciones
 
-La migración `20261110150000_teachers.sql` crea `teachers`, `teacher_revisions`, la función de escritura `save_teacher` y la búsqueda `search_teachers`.
+La migración `20261111001722_teachers.sql` crea `teachers`, `teacher_revisions`, la función de escritura `save_teacher` y la búsqueda `search_teachers`. Esa versión ya está aplicada en Supabase. Se alineó el nombre local con el historial remoto sin cambiar el SQL; no debe volver a ejecutarse para corregir el nombre.
 
 | Campo | Regla |
 | --- | --- |
