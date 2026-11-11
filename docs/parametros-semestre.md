@@ -1,5 +1,7 @@
 # Parámetros del semestre — HU-07 (#9)
 
+La secuencia manual, sus resultados esperados y el registro de evidencia están en la [guía de validación de HU-07](validacion-hu07.md).
+
 ## Comportamiento
 
 `/parametros` permite seleccionar un semestre, consultar sus revisiones y registrar una nueva configuración. Administrador crea semestres y modifica código, fechas, estado, franjas y límites; Director solo consulta. Los demás roles no consultan ni escriben. Cada guardado requiere motivo y deriva responsable y fecha de la identidad autenticada, sin aceptarlos del cliente.
