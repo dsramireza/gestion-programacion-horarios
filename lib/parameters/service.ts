@@ -38,7 +38,7 @@ export async function saveParameters(value: unknown): Promise<{ok:true;revision:
   if (!result.error) return {ok:true,revision:result.data as ParameterRevision};
   const {code,message}=result.error;
   if (code==="42501") return {ok:false,status:403,errors:{form:"Solo Administrador puede editar parámetros."}};
-  if (code==="40001") return {ok:false,status:409,errors:{form:"Los parámetros cambiaron. Recarga la página antes de guardar."}};
+  if (code==="PT409" || code==="40001") return {ok:false,status:409,errors:{form:"Los parámetros cambiaron. Recarga la página antes de guardar."}};
   if (message==="another_active_semester") return {ok:false,status:409,errors:{is_active:"Ya hay otro semestre activo. Inactívalo primero."}};
   if (code==="23505") return {ok:false,status:409,errors:{name:"Ya existe un semestre con ese código."}};
   if (message==="invalid_windows") return {ok:false,status:422,errors:{weekly_windows:"Revisa las franjas y el bloque excluido: cada día debe permitir una sesión continua de 120 minutos."}};
