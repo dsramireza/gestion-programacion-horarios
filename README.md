@@ -33,6 +33,4 @@ La [continuidad de HU-06 a HU-13](docs/continuidad-hu06-hu13.md) recoge el estad
 
 Los [parámetros del semestre](docs/parametros-semestre.md) documentan fechas, franjas institucionales, límites versionados y datos pendientes de revisión al cambiarlos.
 
-La [guía de validación de HU-07](docs/validacion-hu07.md) detalla la secuencia de comprobación, resultados esperados y criterios pendientes.
-
 La [gestión de docentes](docs/docentes.md) describe los datos de dedicación y escalafón, su historial y el contrato de revisiones para las HUs de programación.
